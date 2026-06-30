@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-// 1. Projects Data Array (unchanged)
+// 1. Projects Data Array
 const projects = [
   {
     title: "YouTube Notes & QR Code Generator",
@@ -51,7 +51,7 @@ const projects = [
   },
 ];
 
-// 2. Skills Categories (unchanged)
+// 2. Skills Categories
 const skillCategories = [
   {
     title: "Programming Languages",
@@ -72,29 +72,31 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-purple-500 selection:text-white">
-      {/* Hero Section – FULL WIDTH, larger text */}
+      {/* Hero Section */}
       <header className="max-w-7xl mx-auto pt-28 pb-16 px-8 md:px-12 text-center md:text-left">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 mb-3">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 mb-4">
           Mahad Mubashir
         </h1>
 
-        <p className="text-xl md:text-2xl text-slate-300 font-medium mb-1">
+        <p className="text-xl md:text-2xl text-slate-200 font-semibold mb-2">
           Computer Science Student · Foundation University Islamabad
         </p>
 
-        <p className="text-base md:text-lg text-slate-400 font-mono tracking-wide mb-4">
+        <p className="text-base md:text-lg text-slate-400 font-mono tracking-wide mb-5">
           SEMESTER 4 · 2ND YEAR · 2024 — 2028
         </p>
 
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 text-base md:text-lg text-slate-400 font-mono mb-5">
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-2 text-base md:text-lg text-slate-400 font-mono mb-6">
           <span>DHA 4, Islamabad</span>
           <span className="hidden sm:inline text-slate-600">·</span>
           <span>+92-300-5393037</span>
           <span className="hidden sm:inline text-slate-600">·</span>
-          <span className="text-slate-300">mahadmubashir123@gmail.com</span>
+          <a href="mailto:mahadmubashir123@gmail.com" className="text-slate-300 hover:text-purple-400 transition-colors">
+            mahadmubashir123@gmail.com
+          </a>
         </div>
 
-        <p className="text-base md:text-lg text-slate-400 leading-relaxed max-w-3xl mx-auto md:mx-0 border-l-4 border-purple-500/40 pl-5">
+        <p className="text-base md:text-lg text-slate-300 leading-relaxed max-w-4xl mx-auto md:mx-0 border-l-4 border-purple-500/40 pl-5">
           Second-year CS student with hands-on experience in embedded systems, digital logic design, and software development. Built projects spanning hardware circuit design and software apps in Java, C++, and Python. Passionate about problem-solving and building practical tech solutions.
         </p>
       </header>
@@ -114,37 +116,38 @@ export default function Home() {
                 <div
                   key={index}
                   onClick={() => setExpandedProject(isExpanded ? null : index)}
-                  className="group bg-slate-900/50 border border-slate-800 hover:border-slate-700/80 rounded-2xl p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm shadow-md hover:shadow-lg"
+                  className="group bg-slate-900/40 border border-slate-800/80 hover:border-slate-700 rounded-2xl p-6 cursor-pointer transition-all duration-300 backdrop-blur-sm shadow-md hover:shadow-xl"
                   style={{ borderLeft: `6px solid ${project.color}` }}
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-4">
-                      <span className="text-3xl">{project.icon}</span>
+                      <span className="text-3xl" role="img" aria-label="project icon">{project.icon}</span>
                       <div>
-                        <h3 className="font-semibold text-xl md:text-2xl text-slate-200 group-hover:text-white transition-colors">
+                        <h3 className="font-bold text-xl md:text-2xl text-slate-200 group-hover:text-white transition-colors">
                           {project.title}
                         </h3>
-                        <span className="text-sm text-slate-500 font-mono">
+                        <span className="text-xs md:text-sm text-slate-500 font-mono">
                           {project.date}
                         </span>
                       </div>
                     </div>
-                    <span className="text-slate-500 text-sm font-mono uppercase bg-slate-950 px-3 py-1.5 rounded border border-slate-800">
+                    <span className="text-slate-400 text-xs md:text-sm font-mono uppercase bg-slate-950 px-3 py-1.5 rounded border border-slate-800 shrink-0">
                       {project.tech[0]}
                     </span>
                   </div>
 
-                  <p className="mt-4 text-base md:text-lg text-slate-400 leading-relaxed line-clamp-2 group-hover:line-clamp-none transition-all duration-300">
+                  {/* Description container checks expansion state to avoid jumpy hover states */}
+                  <p className={`mt-4 text-base md:text-lg text-slate-300 leading-relaxed transition-all duration-300 ${isExpanded ? "" : "line-clamp-2"}`}>
                     {project.description}
                   </p>
 
                   {isExpanded && (
-                    <div className="mt-6 pt-5 border-t border-slate-800 flex flex-wrap gap-3 items-center justify-between animate-fadeIn">
+                    <div className="mt-6 pt-5 border-t border-slate-800/60 flex flex-wrap gap-4 items-center justify-between dynamic-fade-in">
                       <div className="flex gap-2 flex-wrap">
                         {project.tech.map((t, i) => (
                           <span
                             key={i}
-                            className="text-sm bg-slate-950 text-slate-400 px-3 py-1.5 rounded-full border border-slate-800 font-medium"
+                            className="text-xs md:text-sm bg-slate-950 text-slate-300 px-3 py-1.5 rounded-full border border-slate-800 font-medium"
                           >
                             {t}
                           </span>
@@ -157,7 +160,7 @@ export default function Home() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="inline-flex items-center gap-2 text-sm bg-slate-800 hover:bg-slate-700 text-white font-medium px-5 py-2.5 rounded-lg transition-colors border border-slate-700"
+                          className="inline-flex items-center gap-2 text-sm bg-slate-800 hover:bg-slate-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-colors border border-slate-700 shadow-sm"
                         >
                           🐙 View on GitHub
                         </a>
@@ -180,16 +183,16 @@ export default function Home() {
             {skillCategories.map((category, idx) => (
               <div
                 key={idx}
-                className="bg-slate-900/30 border border-slate-800/80 rounded-2xl p-6"
+                className="bg-slate-900/20 border border-slate-800/60 rounded-2xl p-6 backdrop-blur-sm"
               >
-                <h3 className="font-bold text-base uppercase tracking-wider text-slate-400 mb-5">
+                <h3 className="font-bold text-sm uppercase tracking-wider text-slate-400 mb-5">
                   {category.title}
                 </h3>
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-2.5">
                   {category.skills.map((skill, i) => (
                     <span
                       key={i}
-                      className="text-sm bg-slate-900 text-slate-300 px-3 py-1.5 rounded-md border border-slate-800/60 font-mono"
+                      className="text-xs md:text-sm bg-slate-900/80 text-slate-200 px-3 py-1.5 rounded-lg border border-slate-800/40 font-mono"
                     >
                       {skill}
                     </span>
@@ -201,8 +204,9 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t border-slate-900 text-center py-10 text-sm text-slate-600 font-mono">
-        © {new Date().getFullYear()} · Built with Next.js & Tailwind CSS
+      {/* Footer */}
+      <footer className="border-t border-slate-900 text-center py-10 text-sm text-slate-500 font-mono">
+        © 2026 · Built with Next.js & Tailwind CSS
       </footer>
     </div>
   );
