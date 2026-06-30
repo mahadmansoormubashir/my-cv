@@ -9,7 +9,6 @@ export default function Home() {
       margin: "0",
     }}>
 
-      {/* Hero / Header */}
       <header style={{
         background: "linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%)",
         borderBottom: "1px solid #00d4ff33",
@@ -41,7 +40,6 @@ export default function Home() {
 
       <div style={{ maxWidth: "900px", margin: "0 auto", padding: "40px 24px" }}>
 
-        {/* Profile */}
         <Section title="Profile">
           <p style={{ lineHeight: "1.8", color: "#ccc", fontSize: "1rem" }}>
             Second-year Computer Science student at Foundation University (Semester 4) with hands-on experience
@@ -52,16 +50,10 @@ export default function Home() {
           </p>
         </Section>
 
-        {/* Education */}
         <Section title="Education">
-          <Card
-            title="Foundation University Islamabad"
-            subtitle="Bachelor of Science in Computer Science"
-            tag="2024 — 2028 · 2nd Year, Sem 4"
-          />
+          <Card title="Foundation University Islamabad" subtitle="Bachelor of Science in Computer Science" tag="2024 — 2028 · 2nd Year, Sem 4" />
         </Section>
 
-        {/* Projects */}
         <Section title="Projects">
           <Card
             title="Smart Parking System"
@@ -103,7 +95,6 @@ export default function Home() {
           />
         </Section>
 
-        {/* Skills */}
         <Section title="Technical Skills">
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "16px" }}>
             <SkillBox label="Languages" items={["C++", "Java", "HTML", "CSS"]} />
@@ -113,7 +104,6 @@ export default function Home() {
           </div>
         </Section>
 
-        {/* Extracurricular */}
         <Section title="Extracurricular & Volunteer Work">
           <Card
             title="Community Outreach Volunteer — Blood Transfusion Awareness"
@@ -125,7 +115,6 @@ export default function Home() {
           />
         </Section>
 
-        {/* Soft Skills */}
         <Section title="Soft Skills">
           <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
             {["Problem Solving", "Teamwork & Collaboration", "Leadership", "Effective Communication"].map(skill => (
@@ -150,7 +139,7 @@ export default function Home() {
   );
 }
 
-function Section({ title, children }) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section style={{ marginBottom: "48px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "24px" }}>
@@ -169,7 +158,7 @@ function Section({ title, children }) {
   );
 }
 
-function Card({ title, subtitle, tag, bullets }) {
+function Card({ title, subtitle, tag, bullets }: { title: string; subtitle?: string; tag?: string; bullets?: string[] }) {
   return (
     <div style={{
       background: "#141414",
@@ -193,7 +182,7 @@ function Card({ title, subtitle, tag, bullets }) {
   );
 }
 
-function SkillBox({ label, items }) {
+function SkillBox({ label, items }: { label: string; items: string[] }) {
   return (
     <div style={{
       background: "#141414",
