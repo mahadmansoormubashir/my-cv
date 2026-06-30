@@ -9,6 +9,7 @@ const projects = [
     description: "A full-stack AI web app with two tools: a YouTube Notes Generator that fetches video transcripts and uses LLaMA 3.1 via Groq API to produce structured study notes, and a QR Code Generator that converts any URL into a downloadable QR image. Built with a FastAPI backend and vanilla JS frontend.",
     color: "#00d4ff",
     icon: "🤖",
+    github: "",
   },
   {
     title: "Smart Parking System",
@@ -17,6 +18,7 @@ const projects = [
     description: "A linked-list-based backend system to manage real-time parking slot availability. Features a ParkingSlot node class with slot ID and occupancy tracking, with full unit test coverage including edge cases.",
     color: "#7b2fff",
     icon: "🚗",
+    github: "",
   },
   {
     title: "4-Bit Binary Calculator",
@@ -25,6 +27,7 @@ const projects = [
     description: "Hardware binary calculator built on perfboard using TTL logic ICs, performing addition and XOR on 4-bit operands. Includes a 7-segment display decoder for real-time binary-to-decimal output.",
     color: "#00d4ff",
     icon: "🔢",
+    github: "",
   },
   {
     title: "Harvest Hub — Farm Management System",
@@ -33,6 +36,7 @@ const projects = [
     description: "A Java console application for managing farm inventory, crop records, and sales with full CRUD operations. Uses persistent file storage and a modular OOP class hierarchy.",
     color: "#7b2fff",
     icon: "🌾",
+    github: "",
   },
   {
     title: "Gear Guru — Inventory & Sales Tracker",
@@ -41,6 +45,7 @@ const projects = [
     description: "C++ inventory management app with login authentication, product tracking, and automated profit calculation. Data persists across sessions using file streams.",
     color: "#00d4ff",
     icon: "⚙️",
+    github: "https://github.com/mahadmansoormubashir/gear-guru",
   },
 ];
 
@@ -85,7 +90,6 @@ export default function Home() {
               cursor: "pointer",
               fontSize: "0.85rem",
               fontWeight: "500",
-              transition: "all 0.2s",
             }}>{item}</button>
           ))}
         </div>
@@ -93,14 +97,13 @@ export default function Home() {
 
       {/* Hero */}
       <header id="about" style={{
-        paddingTop: "140px", paddingBottom: "80px", paddingLeft: "24px", paddingRight: "24px",
+        paddingTop: "140px", paddingBottom: "80px", paddingLeft: "40px", paddingRight: "40px",
         textAlign: "center",
         background: "radial-gradient(ellipse at 50% 0%, #1a0533 0%, #080812 70%)",
         borderBottom: "1px solid #ffffff0f",
         position: "relative",
         overflow: "hidden",
       }}>
-        {/* Glow blobs */}
         <div style={{ position: "absolute", top: "10%", left: "15%", width: "300px", height: "300px", borderRadius: "50%", background: "#7b2fff0a", filter: "blur(60px)", pointerEvents: "none" }} />
         <div style={{ position: "absolute", top: "20%", right: "15%", width: "250px", height: "250px", borderRadius: "50%", background: "#00d4ff0a", filter: "blur(60px)", pointerEvents: "none" }} />
 
@@ -155,7 +158,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* About card */}
         <div style={{
           maxWidth: "860px", margin: "0 auto",
           background: "linear-gradient(135deg, #7b2fff0d, #00d4ff0d)",
@@ -185,7 +187,6 @@ export default function Home() {
                 borderRadius: "16px",
                 padding: "20px 24px",
                 cursor: "pointer",
-                transition: "all 0.2s",
               }}>
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "12px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "14px" }}>
@@ -204,19 +205,31 @@ export default function Home() {
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "12px", flexShrink: 0 }}>
                   <span style={{ fontSize: "0.75rem", color: "#555" }}>{project.date}</span>
-                  <span style={{ color: project.color, fontSize: "1.2rem", transition: "transform 0.2s", transform: openProject === i ? "rotate(180deg)" : "rotate(0deg)" }}>▾</span>
+                  <span style={{ color: project.color, fontSize: "1.2rem", display: "inline-block", transform: openProject === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>▾</span>
                 </div>
               </div>
 
-              {/* Dropdown content */}
               {openProject === i && (
-                <div style={{
-                  marginTop: "16px",
-                  paddingTop: "16px",
-                  borderTop: `1px solid ${project.color}22`,
-                  animation: "fadeIn 0.2s ease",
-                }}>
+                <div style={{ marginTop: "16px", paddingTop: "16px", borderTop: `1px solid ${project.color}22` }}>
                   <p style={{ margin: 0, color: "#999", fontSize: "0.9rem", lineHeight: "1.8" }}>{project.description}</p>
+                  {project.github && (
+                    <a href={project.github} target="_blank" rel="noopener noreferrer"
+                      onClick={e => e.stopPropagation()}
+                      style={{
+                        display: "inline-block",
+                        marginTop: "14px",
+                        background: "#ffffff08",
+                        border: "1px solid #ffffff15",
+                        color: "#fff",
+                        padding: "8px 18px",
+                        borderRadius: "8px",
+                        fontSize: "0.85rem",
+                        textDecoration: "none",
+                        fontWeight: "600",
+                      }}>
+                      🐙 View on GitHub
+                    </a>
+                  )}
                 </div>
               )}
             </div>
@@ -247,7 +260,6 @@ export default function Home() {
             ))}
           </div>
 
-          {/* Soft Skills */}
           <div style={{ marginTop: "32px" }}>
             <p style={{ fontSize: "0.7rem", color: "#444", textTransform: "uppercase", letterSpacing: "3px", marginBottom: "14px" }}>Soft Skills</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
@@ -289,7 +301,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact / Footer */}
+      {/* Footer */}
       <footer id="contact" style={{ borderTop: "1px solid #ffffff08", background: "#050510", padding: "60px 40px 32px" }}>
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
           <h2 style={{ textAlign: "center", fontSize: "2rem", fontWeight: "800", margin: "0 0 8px", color: "#fff" }}>Get In Touch</h2>
