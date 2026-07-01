@@ -145,10 +145,10 @@ export default function Home() {
           Mahad Mubashir
         </h1>
 
-        <p style={{ fontSize: "clamp(1.2rem, 2.5vw, 2rem)", color: "#888", margin: "0 0 16px", fontWeight: "400", position: "relative", zIndex: 2 }}>
+        <p style={{ fontSize: "clamp(1.2rem, 2.5vw, 2rem)", color: "#ddd", margin: "0 0 16px", fontWeight: "500", position: "relative", zIndex: 2 }}>
           Computer Science Student
         </p>
-        <p style={{ fontSize: "clamp(1rem, 1.5vw, 1.3rem)", color: "#555", margin: "0 0 56px", position: "relative", zIndex: 2 }}>
+        <p style={{ fontSize: "clamp(1rem, 1.5vw, 1.3rem)", color: "#888", margin: "0 0 56px", fontWeight: "500", position: "relative", zIndex: 2 }}>
           Foundation University Islamabad · Semester 4 · 2024 — 2028
         </p>
 
@@ -179,20 +179,20 @@ export default function Home() {
           zIndex: 2,
           backdropFilter: "blur(10px)",
         }}>
-          <p style={{ lineHeight: "2", color: "#ccc", fontSize: "clamp(1rem, 1.3vw, 1.25rem)", margin: 0 }}>
+          <p style={{ lineHeight: "2", color: "#f0f0f0", fontSize: "clamp(1rem, 1.3vw, 1.25rem)", margin: 0, fontWeight: "500" }}>
             Second-year CS student with hands-on experience in embedded systems, digital logic design, and software development.
             Built projects spanning hardware circuit design and software apps in Java, C++, and Python.
             Passionate about problem-solving and building practical tech solutions.
           </p>
         </div>
 
-        <div style={{ marginTop: "56px", color: "#444", fontSize: "0.9rem", letterSpacing: "3px", position: "relative", zIndex: 2 }}>
+        <div style={{ marginTop: "56px", color: "#888", fontSize: "0.9rem", letterSpacing: "3px", fontWeight: "600", position: "relative", zIndex: 2 }}>
           ↓ SCROLL TO EXPLORE
         </div>
       </header>
 
       {/* Projects - FULL WIDTH */}
-      <section id="projects" style={{ width: "100%", padding: "120px 5vw", boxSizing: "border-box" }}>
+      <section id="projects" style={{ width: "100%", padding: "60px 5vw", boxSizing: "border-box" }}>
         <SectionTitle title="Projects" subtitle="Click any project to expand details" />
         <div style={{ display: "grid", gap: "20px", maxWidth: "1600px", margin: "0 auto" }}>
           {projects.map((project, i) => (
@@ -222,14 +222,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div style={{ display: "flex", alignItems: "center", gap: "20px", flexShrink: 0 }}>
-                  <span style={{ fontSize: "1rem", color: "#666" }}>{project.date}</span>
+                  <span style={{ fontSize: "0.95rem", color: "#aaa", fontWeight: "500" }}>{project.date}</span>
                   <span style={{ color: project.color, fontSize: "1.8rem", display: "inline-block", transform: openProject === i ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.3s" }}>▾</span>
                 </div>
               </div>
 
               {openProject === i && (
                 <div style={{ marginTop: "28px", paddingTop: "28px", borderTop: `1px solid ${project.color}33` }}>
-                  <p style={{ margin: 0, color: "#bbb", fontSize: "clamp(1rem, 1.3vw, 1.15rem)", lineHeight: "2" }}>{project.description}</p>
+                  <p style={{ margin: 0, color: "#e0e0e0", fontSize: "clamp(1rem, 1.3vw, 1.15rem)", lineHeight: "2" }}>{project.description}</p>
                   {project.github && (
                     <a href={project.github} target="_blank" rel="noopener noreferrer"
                       onClick={e => e.stopPropagation()}
@@ -267,10 +267,10 @@ export default function Home() {
               }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "14px", marginBottom: "24px" }}>
                   <span style={{ fontSize: "2rem" }}>{skill.emoji}</span>
-                  <p style={{ margin: 0, fontSize: "0.9rem", color: "#666", textTransform: "uppercase", letterSpacing: "3px", fontWeight: "700" }}>{skill.label}</p>
+                  <p style={{ margin: 0, fontSize: "0.9rem", color: "#ccc", textTransform: "uppercase", letterSpacing: "3px", fontWeight: "700" }}>{skill.label}</p>
                 </div>
                 {skill.items.map(item => (
-                  <p key={item} style={{ margin: "12px 0", fontSize: "1.1rem", color: "#bbb", display: "flex", alignItems: "center", gap: "12px" }}>
+                  <p key={item} style={{ margin: "12px 0", fontSize: "1.1rem", color: "#eee", display: "flex", alignItems: "center", gap: "12px", fontWeight: "500" }}>
                     <span style={{ color: "#7b2fff", fontSize: "1.2rem" }}>▸</span> {item}
                   </p>
                 ))}
@@ -279,12 +279,12 @@ export default function Home() {
           </div>
 
           <div style={{ marginTop: "56px" }}>
-            <p style={{ fontSize: "0.9rem", color: "#555", textTransform: "uppercase", letterSpacing: "4px", marginBottom: "20px", fontWeight: "700" }}>Soft Skills</p>
+            <p style={{ fontSize: "0.9rem", color: "#ccc", textTransform: "uppercase", letterSpacing: "4px", marginBottom: "20px", fontWeight: "700" }}>Soft Skills</p>
             <div style={{ display: "flex", flexWrap: "wrap", gap: "14px" }}>
               {["Problem Solving", "Teamwork & Collaboration", "Leadership", "Effective Communication"].map(skill => (
                 <span key={skill} style={{
                   background: "#ffffff08", border: "1px solid #ffffff15",
-                  color: "#ccc", padding: "14px 28px", borderRadius: "50px",
+                  color: "#fff", padding: "14px 28px", borderRadius: "50px",
                   fontSize: "1.05rem", fontWeight: "500",
                 }}>{skill}</span>
               ))}
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* Volunteer - FULL WIDTH */}
-      <section style={{ width: "100%", padding: "120px 5vw", boxSizing: "border-box" }}>
+      <section style={{ width: "100%", padding: "60px 5vw", boxSizing: "border-box" }}>
         <div style={{ maxWidth: "1600px", margin: "0 auto" }}>
           <SectionTitle title="Volunteer Work" subtitle="Giving back to the community" />
           <div style={{
@@ -307,7 +307,7 @@ export default function Home() {
               <h3 style={{ margin: "0 0 16px", fontSize: "clamp(1.2rem, 2vw, 1.6rem)", fontWeight: "700", color: "#fff" }}>
                 🩸 Community Outreach — Blood Transfusion Awareness
               </h3>
-              <p style={{ margin: 0, color: "#bbb", fontSize: "clamp(1rem, 1.3vw, 1.15rem)", lineHeight: "1.9" }}>
+              <p style={{ margin: 0, color: "#e0e0e0", fontSize: "clamp(1rem, 1.3vw, 1.15rem)", lineHeight: "1.9" }}>
                 Researched safety protocols at AFIT blood bank and led social media campaigns debunking common myths.
                 Organized educational workshops on hereditary blood disorders for university students.
               </p>
@@ -322,10 +322,10 @@ export default function Home() {
       </section>
 
       {/* Footer - FULL WIDTH */}
-      <footer id="contact" style={{ borderTop: "1px solid #ffffff08", background: "#050510", padding: "120px 5vw 48px", width: "100%", boxSizing: "border-box" }}>
+      <footer id="contact" style={{ borderTop: "1px solid #ffffff08", background: "#050510", padding: "60px 5vw 40px", width: "100%", boxSizing: "border-box" }}>
         <div style={{ maxWidth: "1600px", margin: "0 auto" }}>
           <h2 style={{ textAlign: "center", fontSize: "clamp(2.5rem, 5vw, 4rem)", fontWeight: "900", margin: "0 0 20px", background: "linear-gradient(135deg, #ffffff, #00d4ff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>Get In Touch</h2>
-          <p style={{ textAlign: "center", color: "#666", marginBottom: "64px", fontSize: "1.2rem" }}>Feel free to reach out for opportunities or collaborations</p>
+          <p style={{ textAlign: "center", color: "#bbb", marginBottom: "64px", fontSize: "1.2rem", fontWeight: "500" }}>Feel free to reach out for opportunities or collaborations</p>
 
           <div style={{ display: "flex", justifyContent: "center", flexWrap: "wrap", gap: "24px", marginBottom: "80px" }}>
             {[
@@ -338,14 +338,14 @@ export default function Home() {
                 borderRadius: "20px", padding: "32px 40px", minWidth: "280px", textAlign: "center",
               }}>
                 <div style={{ fontSize: "2.5rem", marginBottom: "16px" }}>{c.icon}</div>
-                <p style={{ margin: "0 0 8px", fontSize: "0.9rem", color: "#555", textTransform: "uppercase", letterSpacing: "3px", fontWeight: "700" }}>{c.label}</p>
-                <p style={{ margin: 0, color: "#ccc", fontSize: "1.1rem" }}>{c.value}</p>
+                <p style={{ margin: "0 0 8px", fontSize: "0.9rem", color: "#aaa", textTransform: "uppercase", letterSpacing: "3px", fontWeight: "700" }}>{c.label}</p>
+                <p style={{ margin: 0, color: "#fff", fontSize: "1.1rem", fontWeight: "500" }}>{c.value}</p>
               </div>
             ))}
           </div>
 
           <div style={{ borderTop: "1px solid #ffffff08", paddingTop: "36px", textAlign: "center" }}>
-            <p style={{ margin: 0, color: "#444", fontSize: "1rem" }}>© 2025 Mahad Mubashir · DHA 4, Islamabad, Pakistan</p>
+            <p style={{ margin: 0, color: "#888", fontSize: "1rem", fontWeight: "500" }}>© 2025 Mahad Mubashir · DHA 4, Islamabad, Pakistan</p>
           </div>
         </div>
       </footer>
@@ -356,12 +356,12 @@ export default function Home() {
 
 function SectionTitle({ title, subtitle }: { title: string; subtitle?: string }) {
   return (
-    <div style={{ marginBottom: "56px", maxWidth: "1600px", margin: "0 auto 56px" }}>
+    <div style={{ marginBottom: "32px", maxWidth: "1600px", margin: "0 auto 32px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "20px", marginBottom: "16px" }}>
         <h2 style={{ fontSize: "clamp(2rem, 4vw, 3.5rem)", fontWeight: "900", color: "#fff", margin: 0, whiteSpace: "nowrap", background: "linear-gradient(135deg, #ffffff, #7b2fff)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>{title}</h2>
         <div style={{ flex: 1, height: "2px", background: "linear-gradient(90deg, #7b2fff44, transparent)" }} />
       </div>
-      {subtitle && <p style={{ margin: 0, color: "#555", fontSize: "1.1rem" }}>{subtitle}</p>}
+      {subtitle && <p style={{ margin: 0, color: "#999", fontSize: "1.1rem", fontWeight: "500" }}>{subtitle}</p>}
     </div>
   );
 }
