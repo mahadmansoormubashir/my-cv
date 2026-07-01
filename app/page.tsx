@@ -36,7 +36,7 @@ const projects = [
     description: "A Java console application for managing farm inventory, crop records, and sales with full CRUD operations. Uses persistent file storage and a modular OOP class hierarchy.",
     color: "#7b2fff",
     icon: "🌾",
-    github: "",
+    github: "https://github.com/mahadmansoormubashir/harvest-hub",
   },
   {
     title: "Gear Guru — Inventory & Sales Tracker",
