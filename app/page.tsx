@@ -21,6 +21,15 @@ const projects = [
     github: "",
   },
   {
+    title: "SPRS — Smart Parking Reservation System",
+    tech: ["Next.js", "TypeScript", "FastAPI", "SQLAlchemy", "JWT Auth"],
+    date: "Innotech Summer Intern · 2026",
+    description: "A full-stack parking reservation platform with three booking flows — advance reservations, walk-in registration, and standing memberships — backed by a FastAPI + SQLAlchemy backend with JWT authentication and role-based access. Includes an admin dashboard for live occupancy tracking, walk-in check-in/check-out, and searching/removing bookings across all three flows. Built and maintained solo after early team members disengaged; a teammate built the backend independently in parallel.",
+    color: "#00d4ff",
+    icon: "🅿️",
+    github: "https://github.com/Samavia-11/SPRS",
+  },
+  {
     title: "4-Bit Binary Calculator",
     tech: ["Digital Logic", "IC 7483", "IC 7486", "IC 7447"],
     date: "Sem 1 · 2024",
