@@ -3,6 +3,15 @@ import { useState } from "react";
 
 const projects = [
   {
+    title: "Noise-to-Signal — Intelligence Pipeline",
+    tech: ["Python", "FastAPI", "Ollama", "LLaMA 3.2", "SQLAlchemy", "HTML/CSS/JS"],
+    date: "Innotech Intern · 2026",
+    description: "An automated ETL pipeline that ingests content from Reddit (RSS) and Mastodon (public API), structures it using a locally-run LLaMA 3.2 model via Ollama — zero cloud API calls, zero rate limits, zero ongoing cost. Designed three REST surfaces from one data core: a searchable /feed, a curated /digest grouped by category, and a rule-based /alerts endpoint using FastAPI and SQLAlchemy. Built a custom dark-theme dashboard with signal-meter bar-graph visualization, real-time keyword/category/score filtering, and 30-minute background scheduling via APScheduler. Debugged a cross-source deduplication bug where a single Mastodon post matching multiple hashtag sources in the same batch caused a SQLite UNIQUE constraint crash — fixed with an in-run fingerprint set. Replaced a cloud Gemini dependency with local Ollama inference to eliminate daily API quotas.",
+    color: "#e8944a",
+    icon: "📡",
+    github: "",
+  },
+  {
     title: "YouTube Notes & QR Code Generator",
     tech: ["Python", "FastAPI", "Groq AI", "LLaMA 3.1"],
     date: "Sem 4 · 2025",
@@ -59,10 +68,12 @@ const projects = [
 ];
 
 const skills = [
-  { label: "Languages", emoji: "💻", items: ["C++", "Java", "Python", "HTML", "CSS"] },
-  { label: "Hardware", emoji: "🔧", items: ["IC 7483, 7486, 7447", "Perfboard Prototyping", "Voltage Regulators", "DIP Switches"] },
-  { label: "CS Concepts", emoji: "🧠", items: ["Data Structures", "OOP", "File I/O", "Unit Testing"] },
-  { label: "Tools", emoji: "🛠️", items: ["VS Code", "Git", "Linux CLI", "FastAPI"] },
+  { label: "Languages", emoji: "💻", items: ["Python", "JavaScript / TypeScript", "C++", "Java", "HTML · CSS"] },
+  { label: "Frameworks", emoji: "🔧", items: ["FastAPI", "Next.js", "React", "Node.js", "Tailwind CSS"] },
+  { label: "Data & AI", emoji: "🧠", items: ["SQLAlchemy · SQLite", "Ollama · LLaMA 3.2", "REST API Design", "ETL Pipeline Design", "Prompt Engineering"] },
+  { label: "Hardware", emoji: "⚡", items: ["IC 7483, 7486, 7447", "Perfboard Prototyping", "Voltage Regulators", "DIP Switches"] },
+  { label: "CS Concepts", emoji: "📐", items: ["Data Structures", "OOP", "File I/O", "Unit Testing", "Digital Logic Design"] },
+  { label: "Tools", emoji: "🛠️", items: ["Git · VS Code", "Linux CLI", "APScheduler", "Windows Task Scheduler"] },
 ];
 
 export default function Home() {
@@ -189,8 +200,8 @@ export default function Home() {
           backdropFilter: "blur(10px)",
         }}>
           <p style={{ lineHeight: "2", color: "#f0f0f0", fontSize: "clamp(1rem, 1.3vw, 1.25rem)", margin: 0, fontWeight: "500" }}>
-            Second-year CS student with hands-on experience in embedded systems, digital logic design, and software development.
-            Built projects spanning hardware circuit design and software apps in Java, C++, and Python.
+            Second-year CS student and Software Intern at Innotech with hands-on experience in full-stack development, local AI integration, and automated data pipelines.
+            Built projects spanning hardware circuit design, software apps, and an end-to-end intelligence engine powered by a locally-run LLM.
             Passionate about problem-solving and building practical tech solutions.
           </p>
         </div>
@@ -254,7 +265,7 @@ export default function Home() {
                         textDecoration: "none",
                         fontWeight: "600",
                       }}>
-                      🐙 View on GitHub
+                      🔗 View on GitHub
                     </a>
                   )}
                 </div>
