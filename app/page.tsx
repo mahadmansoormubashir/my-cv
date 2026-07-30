@@ -9,7 +9,7 @@ const projects = [
     description: "An automated ETL pipeline that ingests content from Reddit (RSS) and Mastodon (public API), structures it using a locally-run LLaMA 3.2 model via Ollama — zero cloud API calls, zero rate limits, zero ongoing cost. Designed three REST surfaces from one data core: a searchable /feed, a curated /digest grouped by category, and a rule-based /alerts endpoint using FastAPI and SQLAlchemy. Built a custom dark-theme dashboard with signal-meter bar-graph visualization, real-time keyword/category/score filtering, and 30-minute background scheduling via APScheduler. Debugged a cross-source deduplication bug where a single Mastodon post matching multiple hashtag sources in the same batch caused a SQLite UNIQUE constraint crash — fixed with an in-run fingerprint set. Replaced a cloud Gemini dependency with local Ollama inference to eliminate daily API quotas.",
     color: "#e8944a",
     icon: "📡",
-    github: "",
+    github: "https://github.com/mahadmansoormubashir/noise-to-signal",
   },
   {
     title: "YouTube Notes & QR Code Generator",
