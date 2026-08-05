@@ -12,6 +12,15 @@ const projects = [
     github: "https://github.com/mahadmansoormubashir/noise-to-signal",
   },
   {
+  title: "Distributed Key-Value Store — Raft Consensus",
+  tech: ["TypeScript", "React", "Node.js", "Express", "Docker", "Raft"],
+  date: "University Case Study · 2026",
+  description: "A fault-tolerant distributed key-value store playground implementing the Raft consensus algorithm. Features linearizable consistency, crash-recovery simulation, network partition survival, and majority quorum writes. Built a chaos monkey script that randomly crashes and revives nodes to demonstrate automatic leader re-election and state-machine recovery. Includes a live visual dashboard with SVG network topology, real-time packet-flight animations, log replication viewer, and a state matrix comparing node data across the cluster. Classified as a CP system (Consistency + Partition Tolerance) under the CAP theorem.",
+  color: "#7b2fff",
+  icon: "🗄️",
+  github: "https://github.com/mahadmansoormubashir/distributed-kv-store",
+},
+  {
     title: "YouTube Notes & QR Code Generator",
     tech: ["Python", "FastAPI", "Groq AI", "LLaMA 3.1"],
     date: "Sem 4 · 2025",
